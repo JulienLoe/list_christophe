@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Bibliotheque {
     ArrayList<Livre> livres = new ArrayList<Livre>();
 
-    //Ajouter un livre à la collection
+//Ajouter un livre à la collection
     //
     //Supprimer un livre de la collection
     //
@@ -38,5 +38,12 @@ public class Bibliotheque {
             livre.setEstEmprunte(false);
         }
 
+    }
+    public ArrayList<Livre> getLivres() {
+        return livres;
+    }
+
+    public void setLivres(ArrayList<Livre> livres) {
+        this.livres = livres;
     }
 }
