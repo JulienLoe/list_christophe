@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -34,6 +35,7 @@ public class Main {
                 System.out.println("Emprunter un livre : 4");
                 System.out.println("Retourner un livre : 5");
                 System.out.println("Supprimer un livre : 6");
+                System.out.println("Supprimer un livre avec son titre : 7");
                 action = scanner.nextInt();
                 scanner.nextLine();
                 if (action > 1) {
@@ -80,7 +82,18 @@ public class Main {
 
                             b1.supprimerLivre(nbr);
                         }
+                    if (action == 7) {
+                        System.out.println("Livre titre : ");
+                        String str = scanner.nextLine();
+                        for( int i = 0; i < b1.getLivres().size(); i++){
+                            if (Objects.equals(b1.getLivres().get(i).getTitre(), str)){
+                                System.out.println(b1.getLivres().get(i).getTitre());
+                                b1.supprimerLivre(i);
+                            }
 
+                        }
+
+                    }
                 }
             }
         }while (number != 1 || action != 0);
